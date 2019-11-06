@@ -27,6 +27,8 @@ async function main() {
 
 	if (!!githubToken) {
 		core.debug('Pushing new secret');
+		await exec.exec('git config --global user.email "actions@github.com"')
+		await exec.exec('git config --global user.name "Actions"')
 		await exec.exec('git add ./' + output)
 		await exec.exec('git commit -m "Updated secret ' + output + '"')
 		await exec.exec('git push origin HEAD:master')
