@@ -1,14 +1,15 @@
 {
   "name": "Varys",
   "version": "0.0.1",
-  "main": "setup-gpg.js",
+  "main": "index.js",
   "author": "Hayden Faulds",
   "scripts": {
-    "package": "ncc build main.js -o dist"
+    "package": "ncc build index.js -o dist"
   },
   "dependencies": {
     "@actions/core": "^1.0.0",
     "@actions/exec": "^1.0.0",
+    "asn1": "^2.0.0",
     "openpgp": "^4.6.2"
   },
   "devDependencies": {
