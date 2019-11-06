@@ -14,17 +14,19 @@ async function main() {
 		return (await openpgp.key.readArmored(publicKey.data)).keys[0]
 	}))
 
+	core.debug('Encrypting secret with ' + publicKeys.size + ' keys');
 	const options = {
 		publicKeys: await publicKeys,
 		message: await openpgp.message.fromText(secret),
 	}
-
 	const encrypted = (await openpgp.encrypt(options)).data
+
+	core.debug('Encrypted secret');
 	await fs.writeFile(output,  encrypted)
 
+	core.debug('Pushing new secret');
 	await exec.exec('git config --global user.email "actions@github.com"')
 	await exec.exec('git config --global user.name "Actions"')
-	await exec.exec('git add ./' + output)
 	await exec.exec('git add ./' + output)
 	await exec.exec('git commit -m "Updated secret ' + output + '"')
 	await exec.exec('git push origin HEAD:master')
