@@ -11,6 +11,8 @@ inputs:
   output:
     description: 'The path for the secret to be stored at'
     required: true
+  githubToken:
+    description: 'GitHub token used to push commit'
 runs:
   using: 'node12'
   main: 'index.js'

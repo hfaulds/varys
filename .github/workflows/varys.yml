@@ -16,3 +16,4 @@ jobs:
           publicKeyDir: test/publickeys
           secret: ${{ secrets.test_secret }}
           output: test/secret
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
