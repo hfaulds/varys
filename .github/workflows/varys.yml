@@ -1,7 +1,7 @@
 name: Varys
 on:
   push:
-    paths-ignore:
+    paths:
     - "test/publickeys/*"
 
 jobs:
