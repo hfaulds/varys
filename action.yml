@@ -1,0 +1,16 @@
+name: 'Varys'
+description: 'Share secrets publicly. Commit public keys'
+author: 'Hayden Faulds'
+inputs:
+  publicKeyDir:
+    description: 'The directory containing the public keys to encrypt the secrets with'
+    required: true
+  secret:
+    description: 'The secret to be encrypted'
+    required: true
+  output:
+    description: 'The path for the secret to be stored at'
+    required: true
+runs:
+  using: 'node12'
+  main: 'main.js'

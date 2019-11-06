@@ -1,0 +1,11 @@
+{
+  "name": "Varys",
+  "version": "0.0.1",
+  "main": "setup-gpg.js",
+  "author": "Hayden Faulds",
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.0",
+    "openpgp": "^4.6.2"
+  }
+}
