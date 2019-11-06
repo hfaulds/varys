@@ -1,5 +1,3 @@
-require('asn1')
-
 const core = require('@actions/core')
 const exec = require('@actions/exec')
 const fs = require('fs').promises;
