@@ -10,12 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - run: npm install
       - name: Run Varys
-        uses: hfaulds/varys@5633a4ccc958c2bd4c1a2bdf124a7d2d17c592f9
+        uses: hfaulds/varys@master
         with:
           publicKeyDir: test/publickeys
           secret: ${{ secrets.test_secret }}
